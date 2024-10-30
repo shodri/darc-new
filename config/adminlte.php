@@ -337,13 +337,20 @@ return [
             // 'label_color' => 'success',
         ],
 
-        // [
-        //     'text' => ' Marcas',
-        //     'url' => 'admin/brands',
-        //     'icon' => 'fas fa-car',
-        //     // 'label' => 4,
-        //     // 'label_color' => 'success',
-        // ],
+        [
+            'text' => ' Planes de Ahorro',
+            'url' => 'admin/planes',
+            'icon' => 'fas fa-file-alt',
+            // 'label' => 4,
+            // 'label_color' => 'success',
+        ],
+        [
+            'text' => ' Landings',
+            'url' => 'admin/landings',
+            'icon' => 'fas fa-wallet',
+            // 'label' => 4,
+            // 'label_color' => 'success',
+        ],
         [
             'text' => 'Curriculums',
             'url' => 'admin/curriculums',

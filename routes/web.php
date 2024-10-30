@@ -12,6 +12,7 @@ use App\Http\Controllers\Admin\ContactController as AdminContactController;;
 use App\Http\Controllers\FrontController;
 use App\Http\Controllers\CurriculumContactController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\PlanAhorroController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 
@@ -33,6 +34,8 @@ Route::get('/author', [FrontController::class, 'author'])->name('author.show');
 Route::get('/contacto', [FrontController::class, 'contacto'])->name('contacto');
 Route::post('curriculum', [CurriculumContactController::class, 'store'])->name('curriculum.store');
 Route::post('/contacto', [ContactController::class, 'store'])->name('contacto.store');
+Route::get('/robot/peugeot', [PlanAhorroController::class, 'peugeot']);
+Route::get('/robot/citroen', [PlanAhorroController::class, 'citroen']);
 
 
 Route::get('/admin', [AuthenticatedSessionController::class, 'create'])->name('login');
@@ -66,6 +69,8 @@ Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
 
     Route::get('/contacts', [AdminContactController::class, 'contacts'])->name('contacts');
     Route::get('/curriculums', [AdminContactController::class, 'curriculums'])->name('curriculums');
+
+    Route::get('/planes', [PlanAhorroController::class, 'index']);
 
 });
 
