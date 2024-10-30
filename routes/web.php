@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\LandingController;
+use App\Http\Controllers\Admin\LandingController;
 use App\Http\Controllers\Admin\BannerController;
 use App\Http\Controllers\Admin\PageController;
 use App\Http\Controllers\Admin\AlbumController;
@@ -38,6 +38,7 @@ Route::get('/robot/peugeot', [PlanAhorroController::class, 'peugeot']);
 Route::get('/robot/citroen', [PlanAhorroController::class, 'citroen']);
 
 
+
 Route::get('/admin', [AuthenticatedSessionController::class, 'create'])->name('login');
 
 Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
@@ -71,6 +72,9 @@ Route::prefix('admin')->name('admin.')->middleware('auth')->group(function () {
     Route::get('/curriculums', [AdminContactController::class, 'curriculums'])->name('curriculums');
 
     Route::get('/planes', [PlanAhorroController::class, 'index']);
+
+    Route::resource('/landings', LandingController::class);
+    Route::post('landings/update-field', [LandingController::class, 'updateField'])->name('landings.updateField');
 
 });
 

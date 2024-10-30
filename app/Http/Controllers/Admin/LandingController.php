@@ -1,6 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
+
+use App\Http\Controllers\Controller;
 use App\Models\Landing;
 use App\Http\Requests\LandingRequest;
 use Illuminate\Http\RedirectResponse;
@@ -8,6 +10,7 @@ use Illuminate\View\View;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
+
 class LandingController extends Controller
 {
     public function index()
@@ -18,7 +21,7 @@ class LandingController extends Controller
 
     public function create()
     {
-        return view('landings.edit')->with([
+        return view('admin.landings.edit')->with([
             'title' => 'Nueva Landing',
             'landing' => new Landing,
             'action' => route('admin.landings.store'),
@@ -38,7 +41,7 @@ class LandingController extends Controller
     public function edit(Landing $landing) :View
     {
 
-        return view('landings.edit')->with([
+        return view('admin.landings.edit')->with([
             'title' => 'Editar Landing',
             'landing' => $landing,
             'action' => route('admin.landings.update', ['landing' => $landing->id]),
@@ -52,7 +55,7 @@ class LandingController extends Controller
         $data['url'] = Str::slug($data['url']);
         $landing->update($data);
 
-        return view('landings.index')->with([
+        return view('admin.landings.index')->with([
             'success' => 'Landing editada exitosamente !', 
             'landings' => Landing::all(),
         ]);
@@ -73,7 +76,7 @@ class LandingController extends Controller
         $landing->content = str_replace('%%_value1_%%', $landing->value_1, $landing->content);
         $landing->content = str_replace('%%_value2_%%', $landing->value_2, $landing->content);
 
-        return view('landings.show')->with(['landing' => $landing]);
+        return view('admin.landings.show')->with(['landing' => $landing]);
     }
 
     public function updateField(Request $request)
@@ -88,5 +91,14 @@ class LandingController extends Controller
         return response()->json(['success' => false, 'message' => 'Error al actualizar los valores']);
     }
 
-    
+    public function home() : View
+    {
+        $landing = Landing::inRandomOrder()->firstOrFail();
+
+        $landing->content = str_replace('../', $landing->site_base, $landing->content);
+        $landing->content = str_replace('%%_value1_%%', $landing->value_1, $landing->content);
+        $landing->content = str_replace('%%_value2_%%', $landing->value_2, $landing->content);
+
+        return view('admin.landings.show')->with(['landing' => $landing]);
+    }
 }
