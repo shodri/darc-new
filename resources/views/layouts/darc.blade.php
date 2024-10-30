@@ -6,10 +6,31 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
     <title>GRUPO D'ARC</title>
-    <meta content="" name="description">
+    <meta content="Grupo DARC - Concesionaria de Autos Peugeot, Citroën y DS" name="description">
     <meta content="" name="keywords">
 
+    
+    <meta property="og:title" content="Grupo DARC - Concesionaria de Autos Peugeot, Citroën y DS" />
+    <meta property="og:description" content="Bienvenido a Grupo DARC, tu concesionaria de confianza para adquirir vehículos Peugeot, Citroën y DS. Explora nuestra amplia gama de modelos y servicios." />
+    <meta property="og:image" content="https://darcautos.com/assets/img/logo.png" /> <!-- Asegúrate de que la imagen sea representativa -->
+    <meta property="og:url" content="https://darcautos.com" /> <!-- La URL de la página donde se encuentra esta información -->
+    <meta property="og:type" content="website" />  
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EVPPN7EYGT"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-EVPPN7EYGT');
+    </script>
     <!-- Favicons -->
+
+    
     <link href="{{ asset('assets/img/favicon.png') }}" rel="icon">
     <link href="{{ asset('assets/img/apple-touch-icon.png') }}" rel="apple-touch-icon">
 
@@ -127,11 +148,11 @@
     <header id="header" class="fixed-top ">
         <div class="container-fluid">
 
-            <span class="d-none d-lg-inline"><img src="{{ asset('assets/img/menu-open.png')}}" width="20" class="mx-5"
-                    onclick="openNav()"> </span>
+            <span class="d-none d-lg-inline"><img src="{{ asset('assets/img/menu-open.png') }}" width="20"
+                    class="mx-5" onclick="openNav()"> </span>
             <span class="d-lg-none"><img src="assets/img/menu-open.png" width="20" class="mx-3"
                     onclick="openNav()"> </span>
-            <a href="/"><img src="{{ asset('assets/img/logo.png')}}" width="240"></a>
+            <a href="/"><img src="{{ asset('assets/img/logo.png') }}" width="240"></a>
 
 
 
@@ -140,16 +161,18 @@
                 <div class="container-fluid">
 
                     <span class="d-none d-lg-inline"><a href="javascript:void(0)" onclick="closeNav()"><img
-                                src="{{ asset('assets/img/menu-close.png')}}" width="20" class="mx-5"></a></span>
+                                src="{{ asset('assets/img/menu-close.png') }}" width="20"
+                                class="mx-5"></a></span>
                     <span class="d-lg-none"><a href="javascript:void(0)" onclick="closeNav()"><img
-                                src="{{ asset('assets/img/menu-close.png')}}" width="20" class="mx-3"></a></span>
+                                src="{{ asset('assets/img/menu-close.png') }}" width="20"
+                                class="mx-3"></a></span>
 
 
-                    <a href="/"><img src="{{ asset('assets/img/logo.png')}}" width="240"></a>
+                    <a href="/"><img src="{{ asset('assets/img/logo.png') }}" width="240"></a>
                     <div class="row">
                         <div class="col-md-12" style="padding:50px;">
 
-                            <a class="mainmenu" href="{{route('empresa')}}">Empresa</a>
+                            <a class="mainmenu" href="{{ route('empresa') }}">Empresa</a>
 
                             <div class="panel-group" id="accordion">
                                 <div class="panel">
@@ -157,19 +180,19 @@
                                         href="#collapseMarcas">Marcas</a>
                                     <div id="collapseMarcas" class="panel-collapse collapse">
                                         <div class="panel-body">
-                                            <a class="itemmenu" href="{{route('citroen')}}">Citroën</a>
-                                            <a class="itemmenu" href="{{route('peugeot')}}">Peugeot</a>
-                                            <a class="itemmenu" href="{{route('ds')}}">DS</a>
+                                            <a class="itemmenu" href="{{ route('citroen') }}">Citroën</a>
+                                            <a class="itemmenu" href="{{ route('peugeot') }}">Peugeot</a>
+                                            <a class="itemmenu" href="{{ route('ds') }}">DS</a>
                                         </div>
                                     </div>
                                 </div>
 
-                                <a class="mainmenu" href="{{route('servicios')}}">Servicios</a>
-                                <a class="mainmenu" href="{{route('recursos-humanos')}}">Recursos Humanos</a>
-                                <a class="mainmenu" href="{{route('sucursales')}}">Sucursales</a>
-                                <a class="mainmenu" href="{{route('blog')}}">Novedades</a>
+                                <a class="mainmenu" href="{{ route('servicios') }}">Servicios</a>
+                                <a class="mainmenu" href="{{ route('recursos-humanos') }}">Recursos Humanos</a>
+                                <a class="mainmenu" href="{{ route('sucursales') }}">Sucursales</a>
+                                <a class="mainmenu" href="{{ route('blog') }}">Novedades</a>
 
-                                <a class="mainmenu" href="{{route('contacto')}}">Contáctenos</a>
+                                <a class="mainmenu" href="{{ route('contacto') }}">Contáctenos</a>
 
                                 <a class="mainmenu" href="#"></a>
 
@@ -230,9 +253,9 @@
                 <div class="col d-flex align-items-stretch">
                     <div class="member" data-aos="fade-up" data-aos-delay="100" style="background-color:#009de0;">
                         <div class="member-img">
-                            <img src="{{ asset('assets/img/portfolio/a-p.jpg')}}" class="img-fluid" alt="">
+                            <img src="{{ asset('assets/img/portfolio/a-p.jpg') }}" class="img-fluid" alt="">
                             <div class="social">
-                                <a href="{{route('peugeot')}}">Ver detalles</a>
+                                <a href="{{ route('peugeot') }}">Ver detalles</a>
                             </div>
                         </div>
                     </div>
@@ -241,9 +264,9 @@
                 <div class="col d-flex align-items-stretch">
                     <div class="member" data-aos="fade-up" data-aos-delay="300" style="background-color:#000;">
                         <div class="member-img">
-                            <img src="{{ asset('assets/img/portfolio/a-c.jpg')}}" class="img-fluid" alt="">
+                            <img src="{{ asset('assets/img/portfolio/a-c.jpg') }}" class="img-fluid" alt="">
                             <div class="social">
-                                <a href="{{route('citroen')}}">Ver detalles</a>
+                                <a href="{{ route('citroen') }}">Ver detalles</a>
                             </div>
                         </div>
                     </div>
@@ -252,9 +275,10 @@
                 <div class="col d-flex align-items-stretch">
                     <div class="member" data-aos="fade-up" data-aos-delay="300" style="background-color:#000;">
                         <div class="member-img">
-                            <img src="{{ asset('assets/img/portfolio/a-ds.jpg')}}" class="img-fluid" alt="">
+                            <img src="{{ asset('assets/img/portfolio/a-ds.jpg') }}" class="img-fluid"
+                                alt="">
                             <div class="social">
-                                <a href="{{route('ds')}}">Ver detalles</a>
+                                <a href="{{ route('ds') }}">Ver detalles</a>
                             </div>
                         </div>
                     </div>
@@ -275,7 +299,7 @@
                 <div class="row">
 
                     <div class="col-lg-2 col-md-1">
-                        <img src="{{ asset('assets/img/logo-blanco.png')}}" width="160">
+                        <img src="{{ asset('assets/img/logo-blanco.png') }}" width="160">
                     </div>
 
                     <div class="col-lg-6 col-md-6 footer-links">
